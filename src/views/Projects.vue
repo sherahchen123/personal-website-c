@@ -66,6 +66,7 @@ import { useStore } from 'vuex';
 import Navigation from '@/components/Navigation.vue';
 import ProjectDetails from '@/components/ProjectDetails.vue';
 import { getText } from '@/i18n/lang.js';
+import { getStaticPath } from '@/utils/pathUtils.js';
 
 const store = useStore();
 const currentLanguage = computed(() => store.state.language);
@@ -87,30 +88,30 @@ const programProjects = [
   {
     title: '过往工作说明：三维组件库功能建设',
     title_en: 'Work Experience: 3D Component Library Development',
-    image: 'static/assets/images/projects/threeDComponents.png',
+    image: getStaticPath('/static/assets/images/projects/threeDComponents.png'),
     description: '工作期间部分基于cesium的三维功能组件',
     description_en: 'Some cesium-based 3D functional components developed during work',
-    video: 'static/assets/videos/programs/threeDComponents.mp4',
+    video: getStaticPath('/static/assets/videos/programs/threeDComponents.mp4'),
     details: '本项目展示了工作期间完成的部分基于cesium的三维功能组件。主要包含以下功能：辅助选址、规划条件提取、分屏比对、专题制图、叠加分析、控规盒子、wms数据格式显隐、限高分析、一键BIM数据上传显示',
     details_en: 'This project showcases some cesium-based 3D functional components developed during work, including: site selection assistance, planning condition extraction, split-screen comparison, thematic mapping, overlay analysis, regulatory planning boxes, WMS data format display/hide, height restriction analysis, one-click BIM data upload and display'
   },
   {
     title: '心理健康类app&小程序',
     title_en: 'Personal Project: Mental Health App & Mini Program',
-    image: 'static/assets/images/programs/mini-program.png',
+    image: getStaticPath('/static/assets/images/programs/mini-program.png'),
     description: '这是一个由自己进行需求挖掘、设计、开发、上线的个人微信小程序项目',
     description_en: 'This is a personal WeChat mini program project with self-requirement exploration, design, development, and launch',
-    video: 'static/assets/videos/programs/mini_program.mp4',
+    video: getStaticPath('/static/assets/videos/programs/mini_program.mp4'),
     details: '这是一个uni-app项目，涉及到情绪记录、音频播放、趣味测试、情绪分析、感恩日记等核心模块。采用微信云服务实现数据表的存储。相关的个人技术文档链接如下：https://blog.csdn.net/weixin_44131871/article/details/151933622 和 https://blog.csdn.net/weixin_44131871/article/details/151934704',
     details_en: 'This is a uni-app project involving core modules such as mood recording, audio playback, interesting tests, mood analysis, and gratitude diary. WeChat cloud services are used for data table storage. Related personal technical documentation links: https://blog.csdn.net/weixin_44131871/article/details/151933622 and https://blog.csdn.net/weixin_44131871/article/details/151934704'
   },
   {
     title: '图像处理小demo',
     title_en: 'Project: Image Processing Demo',
-    image: 'static/assets/images/projects/imagePS.png',
+    image: getStaticPath('/static/assets/images/projects/imagePS.png'),
     description: '这是一个基于canvas的图像处理小demo',
     description_en: 'This is a canvas-based image processing demo',
-    video: 'static/assets/videos/programs/imagePS.mp4',
+    video: getStaticPath('/static/assets/videos/programs/imagePS.mp4'),
     details: '包含通过canvas对照片进行各种处理的方法，和简单的Three.js的3D展示实现。',
     details_en: 'Includes various methods for processing photos through canvas, and simple Three.js 3D display implementation.'
   },
@@ -119,30 +120,30 @@ const analysisProjects = [
   {
     title: '旅游度假区选址适宜性分析',
     title_en: 'Project: Tourist Resort Site Selection Suitability Analysis',
-    image: 'static/assets/images/projects/overlay.png',
+    image: getStaticPath('/static/assets/images/projects/overlay.png'),
     description: '这是一个运用ArcGIS做的旅游度假区选址分析项目',
     description_en: 'This is a tourist resort site selection analysis project using ArcGIS',
-    video: 'static/assets/videos/programs/overlay_analysis.mp4',
+    video: getStaticPath('/static/assets/videos/programs/overlay_analysis.mp4'),
     details: '本项目的选址分析主要基于ArcGIS叠加分析，选址评价标准结合专业知识融合多维度数据，具体如视频所示，展示的是ArcGIS分析过程图和和结果的展示',
     details_en: 'The site selection analysis of this project is mainly based on ArcGIS overlay analysis. The site selection evaluation criteria combine professional knowledge and multi-dimensional data. As shown in the video, it displays the ArcGIS analysis process diagrams and results.'
   },
   {
     title: '商业数据分析&数据爬取',
     title_en: 'Project: Business Data Analysis & Web Crawling',
-    image: 'static/assets/images/projects/project2.png',
+    image: getStaticPath('/static/assets/images/projects/project2.png'),
     description: '这是一个基于python的商业数据分析&数据爬取项目',
     description_en: 'This is a Python-based business data analysis & web crawling project',
-    video: 'static/assets/videos/programs/data_analysis.mp4',
+    video: getStaticPath('/static/assets/videos/programs/data_analysis.mp4'),
     details: '这个商业数据分析项目，包含了数据获取、数据清洗、数据分析和数据图表绘制的多个步骤和过程，具体见视频。',
     details_en: 'This business data analysis project includes multiple steps and processes of data acquisition, data cleaning, data analysis, and data chart drawing, as shown in the video.'
   },
   {
     title: '论文项目：有关澳大利亚昆士兰州的职住平衡分析研究',
     title_en: 'Thesis Project: Research on Job-Housing Balance in Queensland, Australia',
-    image: 'static/assets/images/projects/project3.png',
+    image: getStaticPath('/static/assets/images/projects/project3.png'),
     description: '这是一个基于地理数据分析的综合研究论文',
     description_en: 'This is a comprehensive research thesis based on geographic data analysis',
-    video: 'static/assets/videos/programs/lunwen.mp4',
+    video: getStaticPath('/static/assets/videos/programs/lunwen.mp4'),
     details: '这篇硕士论文运用澳大利亚昆士兰统计局的官方数据，对昆士兰地区的2006-2016年职住平衡的变化进行分析。具体的研究过程包含基于spss和matlab的数据分析、统计分析，和基于ArcGIS的空间数据处理和分析。',
     details_en: 'This master thesis uses official data from the Queensland Bureau of Statistics in Australia to analyze changes in job-housing balance in the Queensland region from 2006 to 2016. The specific research process includes data analysis and statistical analysis based on SPSS and MATLAB, as well as spatial data processing and analysis based on ArcGIS.'
   },
@@ -151,7 +152,7 @@ const designProjects = [
 {
     title: '学生时期项目：基于社会融合背景下的武汉市东湖景中村改造混合居住区设计',
     title_en: 'Student Project: Mixed Residential Area Design for Donghu Scenic Village Renovation in Wuhan under the Background of Social Integration',
-    image: 'static/assets/images/projects/design1.png',
+    image: getStaticPath('/static/assets/images/projects/design1.png'),
     description: '这是一个本科阶段的城市设计项目，包含了调研、城市设计、建模和海报设计的阶段。',
     description_en: 'This is an undergraduate urban design project, including research, urban design, modeling and poster design stages.',
     video: '',

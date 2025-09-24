@@ -1,6 +1,6 @@
 // src/utils/particleEffect.js
-export const createParticleSystem = (containerId, particleCount, color) => {
-  const container = document.getElementById(containerId);
+export const createParticleSystem = (containerElement, particleCount, color) => {
+  const container = containerElement;
   if (!container) return;
   
   const canvas = document.createElement('canvas');

@@ -8,7 +8,7 @@
         <div class="left-column">
           <div class="avatar-container">
             <img 
-              src="static/assets/images/me/me.jpg" 
+              src="/static/assets/images/me/me.jpg" 
               alt="Sherah Chen" 
               class="avatar"
               @click="showFullImage"

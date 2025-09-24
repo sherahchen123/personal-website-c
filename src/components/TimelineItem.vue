@@ -58,14 +58,7 @@ const props = defineProps({
 
 const showDetail = ref(-1);
 const isVisible = ref(false);
-console.log(import.meta.url);
-const metaurl = import.meta.url.indexOf('/src');
-let newUrl = "";
-if (metaurl !== -1) {
-    newUrl = import.meta.url.slice(0, metaurl);
-    console.log(newUrl);
-}
-const logoUrl = new URL(newUrl + props.logo).href;
+// Logo URL 构造代码已移除，直接使用props.logo
 
 onMounted(() => {
   isVisible.value = true; // 设置为可见

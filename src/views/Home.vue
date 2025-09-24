@@ -27,6 +27,7 @@ import { useStore } from 'vuex';
 import AnimatedParticle from '@/components/AnimatedParticle.vue';
 import Navigation from '@/components/Navigation.vue';
 import { getText } from '@/i18n/lang.js';
+import { getStaticPath } from '@/utils/pathUtils.js';
 
 const store = useStore();
 const currentLanguage = computed(() => store.state.language);
@@ -43,7 +44,7 @@ defineExpose({
 const downloadResume = () => {
   // 触发简历下载
   const link = document.createElement('a');
-  link.href = '/static/resume.pdf';
+  link.href = getStaticPath('/static/resume.pdf');
   link.download = 'Sherah_Chen_Resume.pdf';
   link.click();
 };

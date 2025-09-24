@@ -1,5 +1,4 @@
 import { createStore } from 'vuex';
-
 export default createStore({
   state: {
     language: 'zh' // 默认语言为中文
