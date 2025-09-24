@@ -44,3 +44,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist # 指定要部署的目录
           force_orphan: true # 强制创建一个新的orphan分支
+
