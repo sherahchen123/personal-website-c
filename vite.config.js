@@ -15,9 +15,9 @@ export default defineConfig({
     chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
-        format: "es", // 确保输出 ES 模块格式
-        entryFileNames: "[name].js",
-        chunkFileNames: "[name].[hash].js",
+        // format: "es", // 确保输出 ES 模块格式
+        // entryFileNames: "[name].js",
+        // chunkFileNames: "[name].[hash].js",
         manualChunks(id) {
           if (id.includes("node_modules")) {
             return id
