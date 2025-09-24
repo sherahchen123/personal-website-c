@@ -27,8 +27,8 @@ jobs:
           cache: "npm"
 
       # 步骤3: 清除缓存
-      - name: Clear cache
-        run: npm cache clean --force
+      # - name: Clear cache
+      #   run: npm cache clean --force
       # 步骤3.1: 安装依赖
       - name: Install dependencies
         run: npm ci
