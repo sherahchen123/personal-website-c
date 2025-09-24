@@ -1,0 +1,44 @@
+# GitHub Actions workflow for deploying Vue.js app to GitHub Pages
+name: Deploy to GitHub Pages
+
+# 触发条件：当推送到main或master分支时运行
+on:
+  push:
+    branches:
+      - main
+      - master
+
+# 设置权限
+env:
+  NODE_VERSION: '16.x'  # 使用的Node.js版本
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 步骤1: 检出代码
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 步骤2: 设置Node.js环境
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      # 步骤3: 安装依赖
+      - name: Install dependencies
+        run: npm ci
+
+      # 步骤4: 构建项目
+      - name: Build project
+        run: npm run build
+
+      # 步骤5: 部署到GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist  # 指定要部署的目录
+          force_orphan: true  # 强制创建一个新的orphan分支
