@@ -1,0 +1,55 @@
+sherahchen-portfolio/
+├── public/
+│   ├── favicon.ico           # 网站图标
+│   └── robots.txt            # 搜索引擎爬虫配置
+├── src/
+│   ├── assets/               # 静态资源
+│   │   ├── fonts/            # 字体文件
+│   │   ├── images/           # 图片资源
+│   │   │   ├── avatar.jpg    # 个人头像
+│   │   │   ├── certificates/ # 证书图片
+│   │   │   ├── projects/     # 项目截图
+│   │   │   └── universities/ # 学校Logo
+│   │   └── sounds/           # 音效文件（如有）
+│   ├── components/           # 全局组件
+│   │   ├── AnimatedParticle.vue  # 动态粒子组件
+│   │   ├── SkillCard.vue       # 技能卡片组件
+│   │   ├── ProjectCard.vue     # 项目卡片组件
+│   │   ├── TimelineItem.vue    # 时间轴项目组件
+│   │   ├── EducationCard.vue   # 教育背景卡片
+│   │   ├── Certificate.vue     # 证书组件
+│   │   ├── ContactForm.vue     # 联系表单
+│   │   └── Navigation.vue      # 导航栏组件
+│   ├── views/                # 页面视图
+│   │   ├── Home.vue          # 首页
+│   │   ├── About.vue         # 关于我
+│   │   ├── Skills.vue        # 技能矩阵
+│   │   ├── Projects.vue      # 项目实战
+│   │   ├── Experience.vue    # 职业经历
+│   │   ├── Education.vue     # 教育背景
+│   │   ├── Certificates.vue  # 资质与成果
+│   │   └── Contact.vue       # 联系方式
+│   ├── composables/          # 组合式函数
+│   │   ├── useIntersectionObserver.js  # 交叉观察器钩子
+│   │   ├── useScrollAnimation.js       # 滚动动画钩子
+│   │   └── useGitHubData.js            # GitHub数据获取钩子
+│   ├── services/             # 服务层
+│   │   ├── apiService.js     # API请求服务
+│   │   └── certificateService.js # 证书服务
+│   ├── utils/                # 工具类
+│   │   ├── formatters.js     # 格式化工具
+│   │   ├── validators.js     # 验证工具
+│   │   └── particleEffect.js # 粒子效果工具
+│   ├── stores/               # 状态管理
+│   │   └── appStore.js       # 应用状态
+│   ├── router/               # 路由配置
+│   │   └── index.js          # 路由设置
+│   ├── App.vue               # 应用入口
+│   └── main.js               # 主入口文件
+├── .github/                  # GitHub配置
+│   └── workflows/            # GitHub Actions工作流
+│       └── update-stats.yml  # 更新统计数据的工作流
+├── .gitignore                # Git忽略配置
+├── package.json              # 项目依赖
+├── vite.config.js            # Vite配置
+└── postcss.config.js         # PostCSS配置
