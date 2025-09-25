@@ -30,6 +30,8 @@
             controls 
             class="project-video"
             :class="{ 'vertical-video': isVerticalVideo }"
+            preload="metadata"
+            :poster="project.image"
           >
             <source :src="project.video" type="video/mp4" />
             {{ currentLanguage === 'zh' ? '您的浏览器不支持视频标签。' : 'Your browser does not support the video tag.' }}
