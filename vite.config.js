@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [vue()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "src")
+      "@": path.resolve(__dirname, "src"),
     },
   },
   build: {
@@ -16,19 +16,21 @@ export default defineConfig({
     rollupOptions: {
       output: {
         // 2. 使用更简洁、更可靠的 manualChunks 策略
-        manualChunks: {
-          // 将 Vue 相关的库打包在一起
-          vue: ['vue', 'vue-router', 'vuex'],
-          // 将其他所有 node_modules 打包成一个 vendor chunk
-          vendor: ['node_modules'],
+        manualChunks: (id) => {
+          if (id.includes('node_modules')) {
+            if (id.includes('vue') || id.includes('vue-router') || id.includes('vuex')) {
+              return 'vue';
+            }
+            return 'vendor';
+          }
         },
         // 保留你其他的 output 配置
-        chunkFileNames: 'assets/[name]-[hash].js',
-        entryFileNames: 'assets/[name]-[hash].js',
+        chunkFileNames: "assets/[name]-[hash].js",
+        entryFileNames: "assets/[name]-[hash].js",
         assetFileNames: ({ name }) => {
-          return /\.(css|png|jpe?g|gif|svg)$/.test(name ?? '')
-            ? 'assets/[name]-[hash][extname]'
-            : 'assets/[name]-[hash][extname]';
+          return /\.(css|png|jpe?g|gif|svg)$/.test(name ?? "")
+            ? "assets/[name]-[hash][extname]"
+            : "assets/[name]-[hash][extname]";
         },
       },
     },
