@@ -9,7 +9,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
-      'vue': 'vue/dist/vue.esm-bundler.js' // 指向 Vue 的 ES 模块版本
+      'vue': path.resolve(__dirname, 'node_modules/vue/dist/vue.esm-bundler.js')
     },
   },
   build: {
@@ -17,8 +17,15 @@ export default defineConfig({
     rollupOptions: {
       output: {
         // format: "es", // 确保输出 ES 模块格式
-        // entryFileNames: "[name].js",
-        // chunkFileNames: "[name].[hash].js",
+        // 确保 chunk 文件使用相对路径
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js',
+        // 修复静态资源引用
+        assetFileNames: ({ name }) => {
+          return /\.(css|png|jpe?g|gif|svg)$/.test(name ?? '')
+            ? 'assets/[name]-[hash][extname]'
+            : 'assets/[name]-[hash][extname]'
+        },
         manualChunks(id) {
           if (id.includes("node_modules")) {
             return id
